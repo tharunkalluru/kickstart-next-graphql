@@ -2,7 +2,7 @@
     "cache": {
         "cachePriming":{
             "urls": [
-                "/gql"
+                "/api/graphql"
         ]
     }
 }
