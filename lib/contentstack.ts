@@ -58,7 +58,7 @@ export async function getPage(url: string) {
     headers.preview_token = previewToken
   }
 
-  const gqEndpoint = `https://${baseURL}/stacks/${apiKey}?environment=${environment}`;
+  const gqEndpoint = `/graphql`;
   const graphQLClient = new GraphQLClient(gqEndpoint, {
     headers
   })
