@@ -36,8 +36,8 @@ export async function GET(request: NextRequest) {
     // Determine the correct CDA endpoint based on region
     const baseURL = region === 'EU' ? 'eu-cdn.contentstack.com' : 'cdn.contentstack.io';
     
-    // Build Contentstack CDA URL - use general entries endpoint, not content_type specific
-    const cdaUrl = new URL(`https://${baseURL}/v3/entries`);
+    // Build Contentstack CDA URL - need to specify content type
+    const cdaUrl = new URL(`https://${baseURL}/v3/content_types/page/entries`);
     cdaUrl.searchParams.set('environment', environment);
     
     // Forward any query parameters from the request
