@@ -58,7 +58,7 @@ export async function getPage(url: string) {
     headers.preview_token = previewToken
   }
 
-  const gqEndpoint = `/graphql`;
+  const gqEndpoint = `https://${baseURL}/stacks/${apiKey}?environment=${environment}`;
   const graphQLClient = new GraphQLClient(gqEndpoint, {
     headers
   })
@@ -132,10 +132,10 @@ export async function getPage(url: string) {
   }
 
   const entry = fixedEntryForEditableTags;
-// After (fixed)
-if (process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW === 'true' && entry) {
-  contentstack.Utils.addEditableTags(entry as Page, 'page', true);
-}
+
+  if (process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW === 'true') {
+    entry && contentstack.Utils.addEditableTags(entry as Page, 'page', true);
+  }
 
   return entry as Page
 }

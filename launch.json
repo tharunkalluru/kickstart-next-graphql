@@ -1,9 +1,9 @@
 {
     "cache": {
-        "cachePriming":{
+        "cachePriming": {
             "urls": [
-                "/graphql"
-        ]
+                "/api/graphql?query={all_page{items{title}}}"
+            ]
+        }
     }
-}
 }
