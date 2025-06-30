@@ -2,7 +2,8 @@
     "cache": {
         "cachePriming": {
             "urls": [
-                "/api/graphql?query={all_page{items{title}}}"
+                "/api/entries",
+                "/api/assets"
             ]
         }
     }
