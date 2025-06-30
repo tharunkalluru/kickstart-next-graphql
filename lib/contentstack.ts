@@ -133,8 +133,8 @@ export async function getPage(url: string) {
 
   const entry = fixedEntryForEditableTags;
 
-  if (process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW === 'true') {
-    entry && contentstack.Utils.addEditableTags(entry as Page, 'page', true);
+  if (process.env.NEXT_PUBLIC_CONTENTSTACK_PREVIEW === 'true' && entry) {
+    contentstack.Utils.addEditableTags(entry as Page, 'page', true);
   }
 
   return entry as Page
