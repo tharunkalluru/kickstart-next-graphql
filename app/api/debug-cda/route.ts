@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
-export async function GET(request: NextRequest) {
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export async function GET(_request: NextRequest) {
   try {
     // Get Contentstack configuration
     const apiKey = process.env.NEXT_PUBLIC_CONTENTSTACK_API_KEY;
@@ -9,7 +10,7 @@ export async function GET(request: NextRequest) {
     const region = process.env.NEXT_PUBLIC_CONTENTSTACK_REGION || 'EU';
     
     // Return debug info
-    const debugInfo = {
+    const debugInfo: any = {
       timestamp: new Date().toISOString(),
       environment_variables: {
         apiKey: apiKey ? `${apiKey.substring(0, 8)}...` : 'MISSING',
